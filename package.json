@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "dev": "SET DEBUG=fibonacci:* & npm start"
+    "start": "node ./bin/www",
+    "dev": "SET DEBUG=fibonacci:* & nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
