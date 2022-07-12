@@ -1,16 +1,16 @@
-<h1 id="currTime"></h1>
+<h2 class="display-4 pb-3">Products</h2>
 
-<h2>Calculate Fibonacci Number</h2>
-
-<form action="/" method="post">
-  <label>Number</label>
-  <input name="num" type="number" />
-  <input type="submit" />
-</form>
-
-<h3>Ans : {{fib}}</h3>
-<h3>Duration : {{duration}} ms</h3>
-
-<script>
-  document.getElementById('currTime').innerHTML = new Date("{{time}}").toLocaleString();
-</script>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+  {{#each products}}
+  <div class="col">
+    <div class="card pt-4">
+      <img src="{{this.image}}" style="max-height:200px;object-fit:contain" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">${{this.price}}</p>
+        <a href="/products/{{this.id}}" class="btn btn-primary">View</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
