@@ -7,7 +7,8 @@ const products = require("../products.json");
 function cpuStress() {
     // run stress shell command using node js
     // Gives cpu load upto 60%
-    exec("stress -c 3 -t 3s", (err, stdout, stderr) => {
+    // console.log(`stress -c ${process.env.stressC} -t ${process.env.stressS}s`)
+    exec(`stress -c ${process.env.stressC} -t ${process.env.stressS}s`, (err, stdout, stderr) => {
         if (err) {
             console.error(err);
             return;
